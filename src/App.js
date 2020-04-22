@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Dropdown from './Dropdown';
+
+const items = [
+  {
+    id: 1,
+    value: 'Pulp Fiction',
+  },
+  {
+    id: 2,
+    value: 'The Prestige',
+  },
+  {
+    id: 3,
+    value: 'Blade Runner 2049',
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1 style={{ textAlign: 'center' }}>
+        Buy Movies{' '}
+        <span role="img" aria-label="Movie projector">
+          🎥
+        </span>
+      </h1>
+      <Dropdown title="Select movie" items={items} multiSelect />
     </div>
   );
 }
